@@ -1,0 +1,83 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/14/2017  16:21:50  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE lesson1.obj TO lesson1 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lesson1.obj (LESSON1)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  lesson1 (LESSON1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     000CH     UNIT         ?C_C51STARTUP
+            CODE    080CH     0009H     UNIT         ?PR?MAIN?LESSON1
+
+
+
+OVERLAY MAP OF MODULE:   lesson1 (LESSON1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LESSON1
+
+
+
+SYMBOL TABLE OF MODULE:  lesson1 (LESSON1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LESSON1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:0090H.0       PUBLIC        LED1
+  B:0090H.2       PUBLIC        LED3
+  B:0090H.4       PUBLIC        LED5
+  B:0090H.6       PUBLIC        LED7
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:080CH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/14/2017  16:21:50  PAGE 2
+
+
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:080CH         LINE#         7
+  C:080CH         LINE#         8
+  C:080EH         LINE#         9
+  C:0810H         LINE#         10
+  C:0812H         LINE#         11
+  C:0814H         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LESSON1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0009H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=24
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

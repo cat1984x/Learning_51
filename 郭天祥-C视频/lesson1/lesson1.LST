@@ -1,0 +1,37 @@
+C51 COMPILER V9.56.0.0   LESSON1                                                           10/14/2017 16:21:50 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE LESSON1
+OBJECT MODULE PLACED IN lesson1.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE lesson1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <reg52.h >
+   2          sbit  LED1 = P1^0;//按位操作1
+   3          sbit  LED3 = P1^2;//按位操作3
+   4          sbit  LED5 = P1^4;//按位操作5
+   5          sbit  LED7 = P1^6;//按位操作7
+   6          
+   7          void main(){
+   8   1        LED1 = 0; //按位操作1  
+   9   1        LED3 = 0; //按位操作3
+  10   1        LED5 = 0; //按位操作5  
+  11   1        LED7 = 0; //按位操作7
+  12   1      //  P1=0xfe; //总线操作1
+  13   1      //  P1=0xfb; //总线操作3
+  14   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      9    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

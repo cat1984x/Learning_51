@@ -1,0 +1,32 @@
+C51 COMPILER V8.02   LESSON1_2                                                             11/12/2016 17:40:05 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE LESSON1_2
+OBJECT MODULE PLACED IN lesson1_2.OBJ
+COMPILER INVOKED BY: C:\Program Files (x86)\keil\C51\BIN\C51.EXE lesson1_2.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h >
+   2          
+   3          
+   4          void main(){
+   5   1      
+   6   1      //      P1=0xfe; //总线操作1
+   7   1      //      P1=0xfb; //总线操作3
+   8   1              P1=0x00; //总线操作全部LED
+   9   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      4    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
