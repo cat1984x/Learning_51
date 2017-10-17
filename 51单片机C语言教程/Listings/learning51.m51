@@ -1,19 +1,20 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        10/17/2017  07:28:28  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/17/2017  08:41:32  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\led.obj TO .\Objects\learning51 PRINT (.\Listings\learning51.m51) RAMSIZE (256)
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\delayms.obj TO .\Objects\learning51 PRINT (.\Listings\learning51.m51) RAMSIZE (256
+>> )
 
 
 MEMORY MODEL: SMALL
 
 
 INPUT MODULES INCLUDED:
-  .\Objects\led.obj (LED)
+  .\Objects\delayms.obj (DELAYMS)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
 
 
-LINK MAP OF MODULE:  .\Objects\learning51 (LED)
+LINK MAP OF MODULE:  .\Objects\learning51 (DELAYMS)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -26,54 +27,72 @@ LINK MAP OF MODULE:  .\Objects\learning51 (LED)
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
-            CODE    0800H     000CH     UNIT         ?C_C51STARTUP
-            CODE    080CH     0007H     UNIT         ?PR?MAIN?LED
+            CODE    0800H     0020H     UNIT         ?PR?_DELAYMS?DELAYMS
+            CODE    0820H     0012H     UNIT         ?PR?MAIN?DELAYMS
+            CODE    0832H     000CH     UNIT         ?C_C51STARTUP
 
 
 
-OVERLAY MAP OF MODULE:   .\Objects\learning51 (LED)
+OVERLAY MAP OF MODULE:   .\Objects\learning51 (DELAYMS)
 
 
 SEGMENT
   +--> CALLED SEGMENT
 ---------------------
 ?C_C51STARTUP
-  +--> ?PR?MAIN?LED
+  +--> ?PR?MAIN?DELAYMS
+
+?PR?MAIN?DELAYMS
+  +--> ?PR?_DELAYMS?DELAYMS
 
 
 
-SYMBOL TABLE OF MODULE:  .\Objects\learning51 (LED)
+SYMBOL TABLE OF MODULE:  .\Objects\learning51 (DELAYMS)
 
   VALUE           TYPE          NAME
   ----------------------------------
 
-  -------         MODULE        LED
+  -------         MODULE        DELAYMS
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:080CH         PUBLIC        main
+  C:0820H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/17/2017  08:41:32  PAGE 2
+
+
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   B:0090H.0       PUBLIC        led1
   D:00C8H         PUBLIC        T2CON
+  C:0800H         PUBLIC        _delayms
   D:00D0H         PUBLIC        PSW
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/17/2017  07:28:28  PAGE 2
-
-
   -------         PROC          MAIN
-  C:080CH         LINE#         4
-  C:080CH         LINE#         5
-  C:080CH         LINE#         6
-  C:080EH         LINE#         7
-  C:0812H         LINE#         8
+  C:0820H         LINE#         5
+  C:0820H         LINE#         6
+  C:0820H         LINE#         7
+  C:0822H         LINE#         8
+  C:0829H         LINE#         9
+  C:082BH         LINE#         10
   -------         ENDPROC       MAIN
-  -------         ENDMOD        LED
+  -------         PROC          _DELAYMS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         13
+  C:0800H         LINE#         14
+  C:0800H         LINE#         16
+  C:080AH         LINE#         17
+  C:081FH         LINE#         18
+  -------         ENDPROC       _DELAYMS
+  -------         ENDMOD        DELAYMS
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0007H BYTE ( 0%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0032H BYTE ( 2%) *
 ******************************************************************************
 
-Program Size: data=9.0 xdata=0 code=22
+Program Size: data=9.0 xdata=0 code=65
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
