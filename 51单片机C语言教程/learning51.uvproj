@@ -364,9 +364,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>delayms.c</FileName>
+              <FileName>LED Segment Displays_Dynamic scanning.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\delayms.c</FilePath>
+              <FilePath>.\LED Segment Displays_Dynamic scanning.c</FilePath>
             </File>
           </Files>
         </Group>

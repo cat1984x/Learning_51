@@ -1,0 +1,53 @@
+C51 COMPILER V9.56.0.0   INTERRUPT                                                         10/17/2017 14:15:11 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE INTERRUPT
+OBJECT MODULE PLACED IN .\Objects\interrupt.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE interrupt.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\interrupt.lst) TABS(2) OBJECT(.\Objects\interrupt.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          sbit led1 = P1^0; //LED1.0，sbit是定义特殊功能寄存器的位变量
+   3          unsigned char num;
+   4          //void T0_time(void) interrupt 1;
+   5          
+   6          int main(void)
+   7          {
+   8   1        TMOD=0x01;    //定时器0为工作方式1
+   9   1        TH0=(65536-45872)/256;    //装初值50ms数为45872
+  10   1        TL0=(65536-45872)%256;
+  11   1        EA=1;   //开总中断
+  12   1        ET0=1;  //定时器0中断
+  13   1        TR0=1;  //启动定时器0
+  14   1        while(1);
+  15   1        return 1;
+  16   1      }
+  17          
+  18          void T0_time(void) interrupt 1
+  19          {
+  20   1        TH0=(65536-45872)/256;    //装初值50ms数为45872
+  21   1        TL0=(65536-45872)%256;
+  22   1        num++;
+  23   1        if(num==20)
+  24   1        {
+  25   2          num=0;
+  26   2          led1=~led1;
+  27   2        }
+  28   1      }
+*** WARNING C294 IN LINE 15 OF interrupt.c: unreachable code
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     44    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
