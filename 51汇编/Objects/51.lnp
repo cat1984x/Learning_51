@@ -1,3 +1,0 @@
-".\Objects\bottom_led.obj" 
-TO ".\Objects\51" 
-PRINT(".\Listings\51.m51") RAMSIZE(256) 
